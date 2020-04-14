@@ -1,4 +1,5 @@
 
 config setting 'config'
+	option conf '/etc/conf/sync'
 	option enabled '0'
 	option port '8384'
