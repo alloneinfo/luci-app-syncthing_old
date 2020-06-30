@@ -4,6 +4,9 @@ msgstr "储存同步"
 msgid "SyncThing Synchronization Tool"
 msgstr "syncthing同步工具"
 
+msgid "Home Path"
+msgstr "Home路径"
+
 
 
 
