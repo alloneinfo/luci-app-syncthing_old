@@ -13,7 +13,7 @@ s.anonymous = true
 s:option(Flag, "enabled", translate("Enable"))
 
 s:option(Value, "port", translate("port")).default = 8384
-s:option(Value, "conf", translate("conf")).default = "/etc/conf/syncconf"
+s:option(Value, "conf", translate("Home Path")).default = "/etc/conf/syncconf"
 s.rmempty = true
 
 
