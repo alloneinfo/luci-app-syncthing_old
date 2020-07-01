@@ -12,8 +12,8 @@ run_syncthing()
 		config_get conf $1 conf
 		state=`pgrep syncthing | wc -l`
 		if [ $state = 0 ] ; then
-			export HOME="$conf"
-			syncthing -HOME="$conf" -gui-address="0.0.0.0:$port" -logfile="/var/log/syncthing.log" -no-browser >/dev/null &
+			export home="$conf"
+			syncthing -home="$conf" -gui-address="0.0.0.0:$port" -logfile="/var/log/syncthing.log" -no-browser >/dev/null &
 			echo "启动中..."
 			start=`pgrep syncthing | wc -l`
 			if [ $start = 0 ] ; then
