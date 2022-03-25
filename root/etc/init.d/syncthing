@@ -10,12 +10,12 @@ run_syncthing()
 		config_get port $1 port
 		local conf
 		config_get conf $1 conf
-		state=`pgrep syncthing | wc -l`
+		state=`pgrep bin/syncthing | wc -l`
 		if [ $state = 0 ] ; then
 			export home="$conf"
-			syncthing -home="$conf" -gui-address="0.0.0.0:$port" -logfile="/var/log/syncthing.log" -no-browser >/dev/null &
+			/usr/bin/syncthing -home="$conf" -gui-address="0.0.0.0:$port" -logfile="/var/log/syncthing.log" -no-browser >/dev/null &
 			echo "启动中..."
-			start=`pgrep syncthing | wc -l`
+			start=`pgrep bin/syncthing | wc -l`
 			if [ $start = 0 ] ; then
 				echo "启动失败"
 			else
@@ -35,8 +35,8 @@ start()
 
 stop()
 {
-	kill -9 `pgrep syncthing`
-	stop=`pgrep syncthing | wc -l`
+	kill -9 `pgrep bin/syncthing`
+	stop=`pgrep bin/syncthing | wc -l`
 	if [ $stop = 0 ] ; then
 	echo "已停止运行"
 	else
